@@ -57,5 +57,17 @@ def delete_contact(contact_id):
         return jsonify({'error': 'Contact not found'}), 404
     return jsonify({'message': 'Contact deleted'}), 200
 
+@app.route('/api/hello')
+def say_hello():
+    return jsonify(message="Hello, World!"), 200
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, debug=True)
+
+
+
+# Удаление контакта
+
+# Удаление контакта
+
+# Удаление контакта
