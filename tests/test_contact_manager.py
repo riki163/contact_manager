@@ -2,6 +2,7 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.service import Service
 import time
 
 class ContactManagerTest(unittest.TestCase):
@@ -11,7 +12,8 @@ class ContactManagerTest(unittest.TestCase):
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
-        self.driver = webdriver.Chrome(executable_path='/usr/lib/chromium-browser/chromedriver', options=options)
+        service = Service('/usr/lib/chromium-browser/chromedriver')
+        self.driver = webdriver.Chrome(service=service, options=options)
         self.driver.get("http://127.0.0.1:5000")  # Убедитесь, что порт совпадает с вашим приложением
 
     def tearDown(self):
