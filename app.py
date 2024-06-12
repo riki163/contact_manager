@@ -1,3 +1,5 @@
+# This is a test change to trigger CI/CD pipeline
+
 from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
@@ -23,7 +25,7 @@ def create_contact():
     return jsonify(contact), 201
 
 # Получение списка контактов
-@app.route('/contacts', methods=['GET'])
+@app.route('/contacts', methods['GET'])
 def get_contacts():
     return jsonify(list(contacts.values())), 200
 
